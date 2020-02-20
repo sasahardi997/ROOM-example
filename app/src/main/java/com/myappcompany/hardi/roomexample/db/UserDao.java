@@ -2,6 +2,7 @@ package com.myappcompany.hardi.roomexample.db;
 
 import java.util.List;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -24,5 +25,5 @@ public interface UserDao {
     void deleteAllUsers();
 
     @Query("SELECT * FROM user_table ORDER BY user_priority DESC")
-    List<User> getAllUsers();
+    LiveData<List<User>> getAllUsers();
 }

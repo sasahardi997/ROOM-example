@@ -5,10 +5,12 @@ import android.os.AsyncTask;
 
 import java.util.List;
 
+import androidx.lifecycle.LiveData;
+
 public class UserRepository {
 
     private UserDao userDao;
-    private List<User> allUsers;
+    private LiveData<List<User>> allUsers;
 
     public UserRepository(Application application){
         UserDatabase database = UserDatabase.getInstance(application);
@@ -32,7 +34,7 @@ public class UserRepository {
         new DeleteAllUserAsyncTask(userDao).execute();
     }
 
-    public List<User> getAllUsers(){
+    public LiveData<List<User>> getAllUsers(){
         return allUsers;
     }
 

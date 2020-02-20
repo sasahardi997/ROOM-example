@@ -21,6 +21,7 @@ android {
 
 dependencies {
     def room_version = "2.2.4"
+    def lifecycle_version = "2.2.0"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -32,6 +33,14 @@ dependencies {
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
 
+    //Room
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    //Lifecycle components
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+
+
 }
